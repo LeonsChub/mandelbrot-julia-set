@@ -10,6 +10,8 @@ def z_iterate(i_num , c ): #iterate once through the mandelbrot equation
 
     return new_z ,c
 
+
+
 @njit
 def repeat_iteration(i_num,lim): #iterate many times through the mandelbrot equation (lim amount of times) and return when the iteration breaks when it breaches a distance greater than two from the origin
     z = i_num 
