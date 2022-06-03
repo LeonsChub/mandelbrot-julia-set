@@ -10,12 +10,15 @@ def z_iterate(i_num , c ): #iterate once through the mandelbrot equation
 
     return new_z ,c
 
-
-
 @njit
-def repeat_iteration(i_num,lim): #iterate many times through the mandelbrot equation (lim amount of times) and return when the iteration breaks when it breaches a distance greater than two from the origin
+def repeat_iteration(i_num,lim ,c = 0): #iterate many times through the mandelbrot equation (lim amount of times) and return when the iteration breaks when it breaches a distance greater than two from the origin
     z = i_num 
-    constant = z
+    
+    if c == 0:
+        constant = z
+    
+    else:
+        constant = c
 
     for i in range(lim):
         z,constant = z_iterate(z,constant) #gets resulting z and pushes old constant to new function
