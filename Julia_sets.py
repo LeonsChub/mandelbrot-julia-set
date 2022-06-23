@@ -12,8 +12,7 @@ black = Color(rgb=(0, 0, 0))
 red = Color(rgb=(1, 0, 0))
 green = Color(rgb=(0, 1, 0))
 blue = Color(rgb=(0, 0, 1))
-
-
+white = Color(rgb=(1, 1, 1))
 
 pallete = []
 
@@ -39,13 +38,19 @@ elif len(sys.argv) > 1:
 
     elif sys.argv[1] == 'fire':
         grad = []
-        grad = list(black.range_to(blue, iter))
+        grad = list(black.range_to(red, iter))
 
-    elif sys.argv[1] == 'alternate';
+    elif sys.argv[1] == 'alternate':
+        grad =[]
+        for i in range(iter):
+            if (i % 2 == 0):
+                grad.append(black)
+            elif (i % 2 == 1):
+                grad.append(white)
 
     for color in grad:
         print(color.rgb)
-        pallete.append((color.red, color.green *255, color.blue * 255))
+        pallete.append((color.red*255, color.green *255, color.blue * 255))
 
 
 pygame.init()
