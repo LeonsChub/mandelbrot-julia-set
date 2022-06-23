@@ -8,12 +8,18 @@ run the main.py program, to explore the Mandelbrot set via dragging the mouse, a
 run the Julia-sets.py to generate Julia sets (duh) by clicking on any point on the screen and an appropriate Julia set will be drawn
 
 
-usage:
-
-example $python main.py -pallete
+description: change pallete color
+example: $python main.py -pallete
 
 
 avilable palletes:
     fire
     green
     alternate
+
+
+
+enable double viewing with a 3rd flag(--cool) after color 
+
+description: enable double viewing both mandelbrot and julia
+example: $python julia_sets.py green --cool (note that you must supply color argument)

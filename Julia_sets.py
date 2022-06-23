@@ -53,8 +53,9 @@ elif len(sys.argv) >=2:
         print(color.rgb)
         pallete.append((color.red*255, color.green *255, color.blue * 255))
     
-    if sys.argv[2] == '--cool':
-        cool = True
+    if len(sys.argv) >=3:
+        if sys.argv[2] == '--cool':
+            cool = True
 
 
 
