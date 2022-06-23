@@ -1,9 +1,7 @@
-from turtle import color
 import numpy as np
 import pygame
 import fractal_engine as fe
 from pygame import gfxdraw
-
 
 import sys 
 from colour import Color
