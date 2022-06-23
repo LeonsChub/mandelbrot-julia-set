@@ -4,13 +4,48 @@ import pygame
 import fractal_engine as fe
 from pygame import gfxdraw
 
+import sys 
+
+from colour import Color
+
+black = Color(rgb=(0, 0, 0))
+red = Color(rgb=(1, 0, 0))
+green = Color(rgb=(0, 1, 0))
+blue = Color(rgb=(0, 0, 1))
+
+
+
 pallete = []
 
 iter = 15
 
-for i in range(iter):
-    color_step = 255/iter
-    pallete.append((color_step*i,color_step*i,color_step*i))
+print(sys.argv)
+
+if len(sys.argv) == 1:
+
+
+    for i in range(iter):
+        color_step = 255/iter
+        pallete.append((color_step*i,color_step*i,color_step*i))
+
+
+elif len(sys.argv) > 1:
+
+    print('MORE THAN 2')
+
+    if sys.argv[1] == 'green':
+        grad = []
+        grad = list(black.range_to(green, iter))
+
+    elif sys.argv[1] == 'fire':
+        grad = []
+        grad = list(black.range_to(blue, iter))
+
+    elif sys.argv[1] == 'alternate';
+
+    for color in grad:
+        print(color.rgb)
+        pallete.append((color.red, color.green *255, color.blue * 255))
 
 
 pygame.init()
@@ -105,11 +140,14 @@ if __name__ == "__main__":
                     gfxdraw.pixel(screen,i,q,pallete[intese])
 
         else:
+            
+
             for i in range(width):
                 for q in range(height):
                     z_n = mapped_numbers[i][q]
                     intese = fe.repeat_iteration(z_n,iter)
                     gfxdraw.pixel(screen,i,q,pallete[intese])
+
 
             
 
