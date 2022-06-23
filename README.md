@@ -6,3 +6,14 @@ Both patterns can be computed via iterating the expression, (Z_(n+1) = (Z_(n))^2
 
 run the main.py program, to explore the Mandelbrot set via dragging the mouse, and scrolling in and out.
 run the Julia-sets.py to generate Julia sets (duh) by clicking on any point on the screen and an appropriate Julia set will be drawn
+
+
+usage:
+
+example $python main.py -pallete
+
+
+avilable palletes:
+    fire
+    green
+    alternate

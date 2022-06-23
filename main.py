@@ -9,14 +9,14 @@ import sys
 from colour import Color
 
 black = Color(rgb=(0, 0, 0))
-red = Color(rgb=(1, 0, 0))
+red = Color(rgb=(1, 0, 0)) 
 green = Color(rgb=(0, 1, 0))
 blue = Color(rgb=(0, 0, 1))
 white = Color(rgb=(1, 1, 1))
 
 pallete = []
 
-iter = 50 #how much we should iterate
+iter = 150 #how much we should iterate
 
 print(sys.argv)
 

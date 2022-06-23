@@ -5,7 +5,6 @@ import fractal_engine as fe
 from pygame import gfxdraw
 
 import sys 
-
 from colour import Color
 
 black = Color(rgb=(0, 0, 0))
