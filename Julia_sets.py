@@ -17,7 +17,7 @@ pallete = []
 
 cool = False
 
-iter = 15
+iter = 60
 
 print(sys.argv)
 
