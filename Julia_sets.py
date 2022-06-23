@@ -56,9 +56,9 @@ pygame.init()
 clock = pygame.time.Clock() #pygame clock for fps
 
 width = 300 # screen parameters
-height = 300
+height = 300 
 
-screen = pygame.display.set_mode([width, height]) #init screen and fill it
+screen = pygame.display.set_mode([width*2, height*2]) #init screen and fill it
 screen.fill((0, 0, 0))
 
 zoom = 4 #arbitrary number
@@ -141,22 +141,16 @@ if __name__ == "__main__":
                 for q in range(height):
                     z_n = mapped_numbers[i][q]
                     intese = fe.repeat_iteration(z_n,iter,c_anchor)
-                    gfxdraw.pixel(screen,i,q,pallete[intese])
+                    gfxdraw.pixel(screen,2*i,2*q,pallete[intese])
+
 
         else:
             
-
             for i in range(width):
                 for q in range(height):
                     z_n = mapped_numbers[i][q]
                     intese = fe.repeat_iteration(z_n,iter)
                     gfxdraw.pixel(screen,i,q,pallete[intese])
-
-
-            
-
-        
-        
 
         #total_time = time.time() - start_time
         #print(str(total_time )+": SECONDS")
