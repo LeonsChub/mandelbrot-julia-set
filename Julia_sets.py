@@ -15,6 +15,8 @@ white = Color(rgb=(1, 1, 1))
 
 pallete = []
 
+cool = False
+
 iter = 15
 
 print(sys.argv)
@@ -27,7 +29,7 @@ if len(sys.argv) == 1:
         pallete.append((color_step*i,color_step*i,color_step*i))
 
 
-elif len(sys.argv) > 1:
+elif len(sys.argv) >=2:
 
     print('MORE THAN 2')
 
@@ -50,6 +52,11 @@ elif len(sys.argv) > 1:
     for color in grad:
         print(color.rgb)
         pallete.append((color.red*255, color.green *255, color.blue * 255))
+    
+    if sys.argv[2] == '--cool':
+        cool = True
+
+
 
 
 pygame.init()
@@ -58,7 +65,14 @@ clock = pygame.time.Clock() #pygame clock for fps
 width = 300 # screen parameters
 height = 300 
 
-screen = pygame.display.set_mode([width*2, height*2]) #init screen and fill it
+
+if(cool):
+    screen = pygame.display.set_mode([width*2, height*2]) #init screen and fill it
+
+else:
+    screen = pygame.display.set_mode([width,height])
+
+
 screen.fill((0, 0, 0))
 
 zoom = 4 #arbitrary number
@@ -141,7 +155,11 @@ if __name__ == "__main__":
                 for q in range(height):
                     z_n = mapped_numbers[i][q]
                     intese = fe.repeat_iteration(z_n,iter,c_anchor)
-                    gfxdraw.pixel(screen,2*i,2*q,pallete[intese])
+                    if(cool):
+                        gfxdraw.pixel(screen,2*i,2*q,pallete[intese])
+                    else:
+                        gfxdraw.pixel(screen,i,q,pallete[intese])
+                   
 
 
         else:
